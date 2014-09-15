@@ -3,7 +3,7 @@
     <id>litepaid</id>
     <name>LitePaid</name>
     <description>Payment method for LitePaid</description>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <translations>
         <item for="name" lang="en">LitePaid</item>
         <item for="description" lang="en">Accept digital currencies easy and fast</item>
@@ -12,7 +12,7 @@
     </translations>
     <compatibility>
         <core_version>
-            <min>4.2.0</min>
+            <min>4.0.0</min>
         </core_version>
         <core_edition>
             ULTIMATE
