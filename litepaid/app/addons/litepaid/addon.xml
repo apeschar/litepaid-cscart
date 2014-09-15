@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<addon scheme="2.0" edition_type="VENDOR">
+    <id>litepaid</id>
+    <name>LitePaid</name>
+    <description>Payment method for LitePaid</description>
+    <version>1.0</version>
+    <translations>
+        <item for="name" lang="en">LitePaid</item>
+        <item for="description" lang="en">Accept digital currencies easy and fast</item>
+        <item for="name" lang="nl">LitePaid</item>
+        <item for="description" lang="nl">Gemakkelijk en snel digitale valuta accepteren</item>
+    </translations>
+    <compatibility>
+        <core_version>
+            <min>4.2.0</min>
+        </core_version>
+        <core_edition>
+            ULTIMATE
+        </core_edition>
+    </compatibility>
+    <authors>
+        <author>
+            <name>Albert Peschar</name>
+            <email>albert@peschar.net</email>
+            <url>https://peschar.net/</url>
+        </author>
+    </authors>
+    <priority>7100</priority>
+    <position>710</position>
+    <auto_install>ULTIMATE</auto_install>
+    <status>active</status>
+    <language_variables>
+        <item lang="en" id="litepaid_test_mode">Test mode</item>
+        <item lang="en" id="litepaid_test_mode_description">Enable test mode. Do not use this on a live site.</item>
+        <item lang="nl" id="litepaid_test_mode">Testmodus</item>
+        <item lang="nl" id="litepaid_test_mode_description">Inschakelen. Gebruik dit niet op een live site.</item>
+    </language_variables>
+    <functions>
+        <item for="install">fn_litepaid_install</item>
+        <item for="uninstall">fn_litepaid_uninstall</item>
+    </functions>
+</addon>
