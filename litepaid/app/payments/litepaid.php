@@ -71,9 +71,15 @@ if (defined('PAYMENT_NOTIFICATION')) {
         fn_order_placement_routines('route', $order_id);
     }
 } else {
+    $amount = $order_info['total'];
+
+    $currencies = Registry::get('currencies');
+    if(!empty($currencies['EUR']['coefficient']))
+        $amount /= $currencies['EUR']['coefficient'];
+
     $data = array(
         'key' => trim($processor_data['processor_params']['api_key']),
-        'value' => number_format($order_info['total'], 2, '.', ''),
+        'value' => number_format($amount, 2, '.', ''),
         'return_url' => fn_url("payment_notification.return?payment=litepaid&order_id=$order_id", AREA, 'current'),
         'description' => 'Order #' . $order_id,
         'test' => !empty($processor_data['processor_params']['test_mode']) ? '1' : '0',
