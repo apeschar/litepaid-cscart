@@ -3,4 +3,4 @@ set -eu
 cd `dirname "$0"`/..
 rm -rf dist
 mkdir dist
-git archive -o dist/cscart-litepaid.zip master litepaid
+git archive -o dist/cscart-litepaid.zip master README.txt README-nl.txt litepaid
