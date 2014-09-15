@@ -1,0 +1,5 @@
+#!/bin/bash
+set -eu
+cd `dirname "$0"`/..
+mkdir dist
+git archive -o dist/cscart-litepaid.zip master litepaid
