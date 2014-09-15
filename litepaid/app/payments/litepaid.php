@@ -47,7 +47,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
         exit;
     }
 
-    $response = file_get_contents('https://www.litepaid.com/api?' . http_build_query(array(
+    $response = Http::get('https://www.litepaid.com/api?' . http_build_query(array(
         'key' => trim($processor_data['processor_params']['api_key']),
         'id'  => $litepaid_id,
     )));
@@ -79,7 +79,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
         'test' => !empty($processor_data['processor_params']['test_mode']) ? '1' : '0',
     );
 
-    $response = file_get_contents('https://www.litepaid.com/api?' . http_build_query($data));
+    $response = Http::get('https://www.litepaid.com/api?' . http_build_query($data));
 
     if(!$response
        || !($response = @json_decode($response, true))
