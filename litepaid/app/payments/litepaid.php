@@ -103,6 +103,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
 
     // redirect
     $url = 'https://www.litepaid.com/invoice/id:' . $litepaid_id;
+    @header('Location: ' . $url);
     echo "<script>\nwindow.location = " . json_encode($url) . ";\n</script>\n";
 }
 
