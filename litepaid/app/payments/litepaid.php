@@ -81,13 +81,10 @@ if (defined('PAYMENT_NOTIFICATION')) {
 
     $response = file_get_contents('https://www.litepaid.com/api?' . http_build_query($data));
 
-    if(!$response || !($response = @json_decode($response, true))) {
-        echo "<p>LitePaid API request failed. Choose another payment method to complete your order.</p>";
-        echo $redirect_timeout;
-        exit;
-    }
-
-    if(empty($response['result']) || $response['result'] != 'success'
+    if(!$response
+       || !($response = @json_decode($response, true))
+       || empty($response['result'])
+       || $response['result'] != 'success'
        || empty($response['data']['invoice_token'])
     ) {
         echo "<p>LitePaid API request failed. Choose another payment method to complete your order.</p>";
